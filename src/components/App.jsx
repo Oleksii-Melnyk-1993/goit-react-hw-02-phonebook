@@ -12,8 +12,19 @@ export class App extends Component {
   generateId = () => {
     return nanoid(6);
   };
+
   formSubmitHandler = data => {
     const { contacts } = this.state;
+    if (contacts.some(contact => contact.name === data.name)) {
+      alert(`${data.name} is already in contact list`);
+      return;
+    }
+    this.setState({
+      contacts: [
+        ...contacts,
+        { id: this.generateId(), name: data.name, number: data.number },
+      ],
+    });
   };
 
   render() {
