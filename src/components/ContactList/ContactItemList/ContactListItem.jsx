@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types';
+import css from './ContactListItem.module.css';
+import { FcPhone } from 'react-icons/fc';
 
 export const ContactListItem = ({ contact, removeContact }) => {
   return (
-    <li key={contact.id}>
+    <li className={css.list_item} key={contact.id}>
+      <FcPhone size={'1.5em'} />
       {contact.name} : {contact.number}
-      <button type="button" onClick={() => removeContact(contact.id)}>
+      <button
+        className={css.button_delete}
+        type="button"
+        onClick={() => removeContact(contact.id)}
+      >
         Delete
       </button>
     </li>
