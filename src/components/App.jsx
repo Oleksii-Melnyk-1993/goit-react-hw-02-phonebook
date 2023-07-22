@@ -14,11 +14,6 @@ export class App extends Component {
       { id: 'id-3', name: 'Nadia Hrytsenko', number: '332-56-71' },
       { id: 'id-4', name: 'Taras Petrenko', number: '126-54-87' },
       { id: 'id-5', name: 'Marina Shevchenko', number: '421-89-33' },
-      { id: 'id-6', name: 'Andriy Yarmolenko', number: '993-27-15' },
-      { id: 'id-7', name: 'Olena Morozova', number: '558-67-89' },
-      { id: 'id-8', name: 'Roman Tkachenko', number: '775-11-64' },
-      { id: 'id-9', name: 'Iryna Ponomarenko', number: '303-52-79' },
-      { id: 'id-10', name: 'Volodymyr Sidorov', number: '655-45-28' },
     ],
     filter: '',
   };
