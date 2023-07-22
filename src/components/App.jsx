@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import css from './App.module.css';
 
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
@@ -8,10 +9,16 @@ import { Filter } from './Filter/Filter';
 export class App extends Component {
   state = {
     contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+      { id: 'id-1', name: 'Oksana Ivanenko', number: '521-34-87' },
+      { id: 'id-2', name: 'Vasyl Kovalchuk', number: '765-98-12' },
+      { id: 'id-3', name: 'Nadia Hrytsenko', number: '332-56-71' },
+      { id: 'id-4', name: 'Taras Petrenko', number: '126-54-87' },
+      { id: 'id-5', name: 'Marina Shevchenko', number: '421-89-33' },
+      { id: 'id-6', name: 'Andriy Yarmolenko', number: '993-27-15' },
+      { id: 'id-7', name: 'Olena Morozova', number: '558-67-89' },
+      { id: 'id-8', name: 'Roman Tkachenko', number: '775-11-64' },
+      { id: 'id-9', name: 'Iryna Ponomarenko', number: '303-52-79' },
+      { id: 'id-10', name: 'Volodymyr Sidorov', number: '655-45-28' },
     ],
     filter: '',
   };
@@ -61,16 +68,18 @@ export class App extends Component {
           height: '100vh',
           display: 'flex',
           justifyContent: 'center',
+          display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
-          fontSize: 40,
           color: '#010101',
         }}
       >
-        <h1>Phonebook</h1>
+        <h1 className={css.title}>Phonebook</h1>
         <ContactForm onSubmit={this.formSubmitHandler} />
-        <h2>Contacts</h2>
-        <p>
-          Total contacts: <span>{this.state.contacts.length}</span>
+        <h2 className={css.subtitle}>Contacts</h2>
+        <p className={css.total}>
+          Total contacts:{' '}
+          <span className={css.total_count}>{this.state.contacts.length}</span>
         </p>
         <Filter value={this.state.filter} onChange={this.handleChangeFilter} />
         <ContactList
